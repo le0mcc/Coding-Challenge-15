@@ -1,5 +1,5 @@
 // Tast 2: Create the Transaction Module
-import { assets, getAssetById } from "./asset.js"; // import assets from asset.js
+import { assets } from "./asset.js"; // import assets from asset.js
 
 // Define and export a function that sums the total value of the portfolio by multiplying the price and quantity of each asset
 export function calculatePortfolioValue() {
@@ -19,9 +19,8 @@ export function getPortfolioAllocation() {
     for (const asset of assets) {
         const assetTotal = asset.price * asset.quantity;
         const percentage = assetTotal / getTotal;
-        let assetDetails = {asset: asset.id, percentageAllocation: percentage};
+        let assetDetails = {id: asset.id, percentageAllocation: percentage*100};
         percentageArray.push(assetDetails);
-        console.log(`Asset ${asset.id} percentage allocation: ${percentage}%`);
     };
     return percentageArray;
 };
