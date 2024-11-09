@@ -8,5 +8,5 @@ export const assetArray = [
 
 // Export a function that returns asset details based on the provided id
 export function getAssetById(id) {
-    return assetArray.find(asset => asset.id ===id);
+    return assetArray.find(asset => asset.id ===id); // returns id from array
 }
